@@ -2,5 +2,6 @@ app:
   applicationId: "m8"
   env: Development
   host: "http://localhost:3000"
+  framework: JAVASCRIPT  
 hawk:
   failureThreshold: high
