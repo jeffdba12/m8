@@ -1,7 +1,6 @@
 app:
-  applicationId: "m8"
+  applicationId: "08e2b1fa-9f08-47b9-a92c-e03cacff8e88"
   env: Development
   host: "http://localhost:8080"
-  framework: JAVASCRIPT  
 hawk:
   failureThreshold: high
