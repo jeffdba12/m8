@@ -3,4 +3,4 @@ app:
   env: Development
   host: "http://localhost:8080"
 hawk:
-  failureThreshold: high
+  failureThreshold: medium
