@@ -31,6 +31,19 @@
     <div id="links"><a href="#" id="username">Give yourself a name</a> &bull; <a href="#" id="help">Help</a> <div style="float:right"><a href="https://github.com/SethClydesdale/magic-8-ball" target="_blank">Created by Seth Clydesdale</a></div></div>
 
     <script src="magic.js"></script>
+
+    <script>
+  document.getElementById("ask").addEventListener("click", function () {
+    const q = document.getElementById("question").value;
+
+    // 👇 Simulated “vulnerability”: reflect input back to the page
+    // The encoded version prevents real script execution.
+    document.getElementById("magicLog").innerHTML =
+      "You asked: " + q.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
+    // Normal app logic continues below...
+  });
+</script>
   </body>
 
 </html>
