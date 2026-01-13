@@ -43,20 +43,29 @@ permissions:
 jobs:
   stackhawk:
     permissions:
-      contents: read # for actions/checkout to fetch code
-      security-events: write # for stackhawk/hawkscan-action to upload code scanning alert info
+      contents: read             # Needed for actions/checkout
+      security-events: write     # Needed to upload Code Scanning alerts
     name: StackHawk
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Start your service
-        run: ./your-service.sh &                  # ✏️ Update this to run your own service to be scanned
+      # Serve your static site locally at http://localhost:8080
+      - name: Start local static web server
+        run: |
+          sudo apt-get install -y python3
+          nohup python3 -m http.server 8080 --directory ./ &
 
+      # Wait a few seconds to ensure the server is up
+      - name: Wait for server to start
+        run: sleep 5
+
+      # Run StackHawk scan
       - name: Run HawkScan
         uses: stackhawk/hawkscan-action@4c3258cd62248dac6d9fe91dd8d45928c697dee0
-        continue-on-error: true                   # ✏️ Set to false to break your build on scan errors
+        continue-on-error: true                   # Set false to fail the build on scan issues
         with:
           apiKey: ${{ secrets.HAWK_API_KEY }}
           codeScanningAlerts: true
