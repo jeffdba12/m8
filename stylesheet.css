@@ -1,6 +1,6 @@
 body {
   color:#FFF;
-  font-size:12px;
+  font-size:16px;
   font-family:Arial, sans-serif;
   background:#003;
 }
@@ -27,11 +27,11 @@ input {
 }
 
 #magic8Ball {
-  background:#9e0b0b;
-  box-shadow:0 48px 24px rgba(255, 255, 255, 0.05) inset, 0 -48px 24px rgba(0, 0, 0, 0.2) inset;
+  background:#151515;
+    box-shadow:0 48px 24px rgba(255, 255, 255, 0.05) inset, 0 -48px 24px rgba(0, 0, 0, 0.2) inset;
   border-radius:250px;
-  height:500px;
-  width:500px;
+  height:300px;
+  width:300px;
   position:relative;
   overflow:hidden;
   margin:0 auto;
@@ -45,8 +45,8 @@ input {
   position:absolute;
   top:50%;
   left:50%;
-  margin-top:55px;
-  margin-left:-55px;
+  margin-top:-75px;
+  margin-left:-75px;
   overflow:hidden;
 }
 
@@ -62,8 +62,8 @@ input {
 #answerSide {
   background:#000;
   border:5px solid #111;
-  margin-top:55px;
-  margin-left:-55px;
+  margin-top:-80px;
+  margin-left:-80px;
 }
 
 #answer {
@@ -116,7 +116,7 @@ input {
   background:#111;
   border-radius:3px;
   margin-bottom:6px;
-  padding:3px;
+  padding:10px;
   height:150px;
   overflow-y:auto;
   overflow-x:hidden;
